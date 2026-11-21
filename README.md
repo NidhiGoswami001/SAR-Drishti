@@ -15,7 +15,7 @@ Powered by European Space Agency (ESA) **Copernicus Sentinel-1 C-Band SAR (5.405
 
 ## 🏗️ System Architecture
 
-```mermaid
+```subgraph Backend["Backend Engine (FastAPI + Async Python)"]
 graph TD
     subgraph Data Sources
         S1[Sentinel-1 GRD SAR VV+VH]
