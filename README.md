@@ -140,49 +140,6 @@ python -c "import ee; credentials = ee.ServiceAccountCredentials('sar-backend-en
 
 ---
 
-## ⚙️ Environment Configuration (`.env`)
-
-### 1. Backend Environment: `sar-drishti-backend/.env`
-Create or update `sar-drishti-backend/.env` with the following variables:
-
-```env
-# Application Environment
-ENV=development
-APP_NAME="SAR-Drishti State Highway Submergence Engine"
-PORT=8000
-HOST=127.0.0.1
-
-# Database Configuration (PostgreSQL 15 Local Native)
-DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/sardrishti
-DB_SYNC_URL=postgresql://postgres:postgres@localhost:5432/sardrishti
-
-# Redis Configuration (Optional / Local Cache Fallback Active)
-REDIS_URL=redis://localhost:6379/0
-
-# Security & Authentication (JWT + OTP)
-JWT_SECRET=super_secret_jwt_key_gujarat_rb_emergency_ops_2026_x7892
-JWT_ALGORITHM=HS256
-JWT_ACCESS_TTL_MIN=480
-JWT_REFRESH_TTL_DAYS=7
-OTP_TTL_SEC=300
-OTP_MAX_VERIFY_ATTEMPTS=5
-
-# Google Earth Engine (GEE) Service Account Credentials
-GEE_PROJECT=sar-drishti-gujarat-451200
-GEE_SERVICE_ACCOUNT=sar-backend-engine@sar-drishti-gujarat-451200.iam.gserviceaccount.com
-GEE_KEY_FILE=secrets/gee-key.json
-
-# Copernicus Data Space Ecosystem (CDSE) API (Optional Secondary S1 Source)
-CDSE_CLIENT_ID=your_cdse_oauth_client_id
-CDSE_CLIENT_SECRET=your_cdse_oauth_client_secret
-
-# Government Emergency SMS Gateway
-NIC_SMS_API_KEY=NIC-SMS-GUJ-9984-SECURE-KEY
-WHATSAPP_GOVT_GATEWAY_URL=https://api.gujarat.gov.in/telemetry/v1/sandes-push
-
-# Gujarat Geospatial AOI (Bounding Box: [min_lon, min_lat, max_lon, max_lat])
-GUJARAT_BBOX=[68.1, 20.1, 74.5, 24.7]
-```
 
 ### 2. Frontend Environment: `seva_first_hackathon/.env`
 Create or update `seva_first_hackathon/.env`:
